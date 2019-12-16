@@ -10,6 +10,7 @@ function App() {
       style={{ height: document.documentElement.clientHeight, margin: "5%" }}
     >
       <Home />
+     
     </Paper>
     // <div className="App">
     //   <h1>Hello CodeSandbox</h1>
