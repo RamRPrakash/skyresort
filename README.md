@@ -1,2 +1,0 @@
-# skyresort
-Created with CodeSandbox
