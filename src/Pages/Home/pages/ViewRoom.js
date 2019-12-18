@@ -1,8 +1,27 @@
 import React, { Component } from "react";
-import { Paper } from "@material-ui/core";
+import { Paper, Modal } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import ModelView from "../../Model/ModelView";
+
 
 class ViewRoom extends Component {
+  constructor(props){
+  super(props);
+  this.state = {
+    ourRooms : false
+  }
+  
+  }
+  ourRooms=()=>{
+    this.setState({
+      ourRooms : true
+    })
+  }
+  CloseRoom=()=>{
+    this.setState({
+      ourRooms : false
+    })
+  }
   render() {
     return (
       <Paper style={{ height: "250px" }}>
@@ -30,12 +49,19 @@ class ViewRoom extends Component {
             </div>
             <br />
             <div style={{ textAlign: "center" }}>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" style={{backgroundColor : 'orange'}} color="succes" onClick={this.ourRooms}>
                 Our Rooms
               </Button>
             </div>
           </div>
         </Paper>
+<ModelView open={this.state.ourRooms} >
+<div style={{width : '100px' , backgroundColor : 'white' , height : '100px'}}>
+<Button variant="contained" style={{backgroundColor : 'orange'}} color="succes" onClick={this.CloseRoom}>
+                Close
+              </Button>
+  </div>
+  </ModelView>
       </Paper>
     );
   }
